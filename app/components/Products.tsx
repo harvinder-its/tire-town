@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import Image from 'next/image';
 
 const products = [
@@ -34,15 +34,15 @@ const products = [
   },
 ];
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
-  visible: (index: number) => ({
+  visible: (index = 0) => ({
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.45,
       delay: index * 0.12,
-      ease: 'easeOut',
+      ease: [0.16, 1, 0.3, 1],
     },
   }),
 };
