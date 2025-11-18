@@ -32,7 +32,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-20 px-6 bg-black">
+    <section id="features" className="py-20 px-6 bg-black scroll-mt-[210px]">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 50 }}

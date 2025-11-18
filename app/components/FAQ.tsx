@@ -26,7 +26,10 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-20 px-6 bg-gradient-to-b from-black via-gray-950 to-black">
+    <section
+      id="faq"
+      className="py-20 px-6 bg-gradient-to-b from-black via-gray-950 to-black scroll-mt-[100px]"
+    >
       <div className="max-w-4xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 50 }}

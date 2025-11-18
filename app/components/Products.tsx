@@ -36,7 +36,10 @@ const products = [
 
 export default function Products() {
   return (
-    <section id="products" className="py-20 px-6 bg-gradient-to-b from-black via-gray-950 to-black">
+    <section
+      id="products"
+      className="py-20 px-6 bg-gradient-to-b from-black via-gray-950 to-black scroll-mt-[40px]"
+    >
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

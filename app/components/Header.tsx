@@ -26,7 +26,7 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <a href="#" className="flex items-center">
+            <a href="#" className="flex items-center gap-4">
               <Image
                 src="/images/final-logo.png"
                 alt="Tire Town Distributors Logo"
@@ -35,6 +35,14 @@ export default function Header() {
                 quality={100}
                 priority
                 className="object-contain h-16 w-auto"
+              />
+              <Image
+                src="/images/logo_ceat.png"
+                alt="CEAT Specialty Logo"
+                width={140}
+                height={140}
+                quality={100}
+                className="object-contain h-12 w-auto"
               />
             </a>
           </motion.div>
