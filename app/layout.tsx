@@ -27,6 +27,15 @@ export const metadata: Metadata = {
     title: "Tire Town Distributors Ltd. — Authorized CEAT Semi-Truck & Trailer Tires",
     description: "Sole authorized CEAT dealer in Canada. Premium semi-truck & trailer tires for long haul, drive & all-wheel applications.",
   },
+  icons: {
+    icon: [
+      {
+        url: "/images/favicon.png",
+        sizes: "96x96",
+        type: "image/png",
+      },
+    ],
+  },
   alternates: {
     canonical: "https://tiretown.ca/",
   },

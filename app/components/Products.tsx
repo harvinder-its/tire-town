@@ -34,6 +34,19 @@ const products = [
   },
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.45,
+      delay: index * 0.12,
+      ease: 'easeOut',
+    },
+  }),
+};
+
 export default function Products() {
   return (
     <section
@@ -56,12 +69,18 @@ export default function Products() {
           {products.map((product, index) => (
             <motion.div
               key={`${product.name}-${index}`}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              whileHover={{ scale: 1.05, y: -10 }}
-              className="bg-black border border-gray-700 rounded-lg overflow-hidden hover:border-gray-500 transition-all duration-300"
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              custom={index}
+              whileHover={{
+                scale: 1.04,
+                y: -10,
+                transition: { type: 'spring', stiffness: 260, damping: 22 },
+              }}
+              whileTap={{ scale: 0.98 }}
+              className="bg-black border border-gray-700 rounded-lg overflow-hidden hover:border-gray-500 transition-colors duration-300"
             >
               <div className="relative h-64 bg-white flex items-center justify-center overflow-hidden">
                 <Image
