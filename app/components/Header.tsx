@@ -8,11 +8,12 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'About', href: '#about' },
-    { name: 'Products', href: '#products' },
-    { name: 'Features', href: '#features' },
-    { name: 'FAQ', href: '#faq' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/#about' },
+    { name: 'Products', href: '/#products' },
+    { name: 'Services', href: '/services' },
+    { name: 'Features', href: '/#features' },
+    { name: 'FAQ', href: '/#faq' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -26,7 +27,7 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <a href="#" className="flex items-center gap-4">
+            <a href="/" className="flex items-center gap-4">
               <Image
                 src="/images/final-logo.png"
                 alt="Tire Town Distributors Logo"
