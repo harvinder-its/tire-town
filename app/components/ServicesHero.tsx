@@ -12,7 +12,7 @@ export default function ServicesHero() {
           transition={{ duration: 0.8 }}
           className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
         >
-          Truck Repair &amp; Maintenance —<br />
+          Truck Repair & Maintenance —<br />
           <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
             Keeping Your Fleet on the Road
           </span>
@@ -24,10 +24,9 @@ export default function ServicesHero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-xl md:text-2xl mb-12 text-gray-300 max-w-4xl mx-auto leading-relaxed"
         >
-          Tire Town Distributors now offers full semi-truck and trailer repair services
-          across Canada — Truck PM (preventive maintenance), general repair, and engine,
-          transmission &amp; electrical diagnostics — from the same trusted team behind our
-          authorized CEAT tire distribution.
+          Tire Town Distributors now offers full semi-truck and trailer repair services across Canada —
+          Truck PM (preventive maintenance), general repair, and engine, transmission & electrical diagnostics —
+          from the same trusted team behind our authorized CEAT tire distribution.
         </motion.p>
 
         <motion.div

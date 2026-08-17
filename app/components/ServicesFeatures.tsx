@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 
-const points = [
+const features = [
   {
     icon: '🔧',
     title: 'Certified Technicians',
@@ -30,7 +30,7 @@ const points = [
   },
 ];
 
-export default function WhyFleetsTrust() {
+export default function ServicesFeatures() {
   return (
     <section className="py-20 px-6 bg-black scroll-mt-[100px]">
       <div className="max-w-6xl mx-auto">
@@ -45,9 +45,9 @@ export default function WhyFleetsTrust() {
         </motion.h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
-          {points.map((point, index) => (
+          {features.map((feature, index) => (
             <motion.div
-              key={point.title}
+              key={feature.title}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -55,9 +55,9 @@ export default function WhyFleetsTrust() {
               whileHover={{ scale: 1.1, y: -10 }}
               className="text-center"
             >
-              <div className="text-5xl mb-4">{point.icon}</div>
-              <h3 className="text-xl font-bold mb-2">{point.title}</h3>
-              <p className="text-gray-400">{point.description}</p>
+              <div className="text-5xl mb-4">{feature.icon}</div>
+              <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+              <p className="text-gray-400">{feature.description}</p>
             </motion.div>
           ))}
         </div>
