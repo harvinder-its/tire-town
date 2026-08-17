@@ -1,8 +1,8 @@
 'use client';
 
-import { AnimatePresence, motion } from 'framer-motion';
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 const initialFormState = {
   name: '',
@@ -13,16 +13,10 @@ const initialFormState = {
 };
 
 export default function Contact() {
+  const router = useRouter();
   const [formData, setFormData] = useState(initialFormState);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
-  const [showConfirmation, setShowConfirmation] = useState(false);
-
-  useEffect(() => {
-    if (!showConfirmation) return;
-    const timeoutId = setTimeout(() => setShowConfirmation(false), 2500);
-    return () => clearTimeout(timeoutId);
-  }, [showConfirmation]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -44,9 +38,8 @@ export default function Contact() {
         throw new Error(data.error || 'Unable to send your request.');
       }
 
-      setStatus({ type: 'success', message: 'Thanks! We received your request and will respond within one business day.' });
-      setShowConfirmation(true);
       setFormData(initialFormState);
+      router.push('/thank-you');
     } catch (error) {
       setStatus({
         type: 'error',
@@ -66,50 +59,6 @@ export default function Contact() {
 
   return (
     <>
-      <AnimatePresence>
-        {showConfirmation && (
-          <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center px-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" aria-hidden="true" />
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 10 }}
-              transition={{ duration: 0.25 }}
-              className="relative z-10 w-full max-w-md rounded-2xl bg-white p-8 text-center text-black shadow-2xl"
-              role="status"
-              aria-live="assertive"
-            >
-              <div className="mb-4 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-                <Image
-                  src="/images/final-logo.png"
-                  alt="Tire Town Distributors"
-                  width={180}
-                  height={60}
-                  className="h-12 w-auto"
-                />
-                <span className="hidden h-10 w-px bg-gray-200 sm:block" aria-hidden="true" />
-                <Image
-                  src="/images/logo_ceat.png"
-                  alt="CEAT Specialty"
-                  width={130}
-                  height={50}
-                  className="h-10 w-auto"
-                />
-              </div>
-              <p className="text-xl font-bold">Request received!</p>
-              <p className="mt-2 text-base text-gray-600">
-                Thanks for reaching out. One of our specialists will respond within one business day.
-              </p>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       <section id="contact" className="py-20 px-6 bg-black scroll-mt-[40px]">
         <div className="max-w-4xl mx-auto">
           <motion.div
