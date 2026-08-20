@@ -1,10 +1,11 @@
 export default function Footer() {
+  const year = new Date().getFullYear();
   return (
     <footer className="bg-black border-t border-gray-800 py-8 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center space-y-4">
           <p className="text-gray-400">
-            © 2025 Tire Town Distributors Ltd. | Authorized CEAT Dealer in Canada
+            © {year} Tire Town Distributors Ltd. | Authorized CEAT Dealer in Canada
           </p>
           <div className="flex justify-center gap-6 text-gray-400">
             <a href="#privacy" className="hover:text-white transition-colors">
